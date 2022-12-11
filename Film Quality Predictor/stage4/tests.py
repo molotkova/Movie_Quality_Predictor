@@ -18,7 +18,7 @@ class Stage4Test(StageTest):
             raise WrongAnswer(f"Answer '{user_output}' contains non-numeric values.")
 
         if len(outputs) != values_number:
-            raise WrongAnswer(f"Answer contains {len(outputs)} values, but {values_number} values are expected.")
+            raise WrongAnswer(f"A wrong number of values, read '{len(outputs)}', expected '{values_number}'.")
 
     def check_num_values(self, values: list, user_values: list, message: str, rel_tol=1.0e-2):
         if not all(isclose(value, user_value, rel_tol=rel_tol) for value, user_value in zip(values, user_values)):
